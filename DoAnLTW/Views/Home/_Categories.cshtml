@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DoAnLTW.LoaiSach>
+
+<!-- Categories -->
+<div class="container-fluid mx-auto mb-5 px-0" style="max-width:1400px">
+    <!-- Tiêu đề -->
+    <h2 class="fw-bold px-3" style="color:#2c3e50">Thể loại</h2>
+
+    <!-- Các thể loại -->
+    <div class="category-container categoryCarousel">
+        <div class="category-wrapper categoryWrapper">
+            @foreach (var i in Model)
+            {
+                <div class="category-col">
+                    <div class="card border-0 text-center category-item">
+                        <a href="@Url.Action("TimKiemTheoTheLoai", "Product", new { id = i.MaLoai })">
+                            <img src="@Url.Content("~/Content/Images/"+i.AnhDaiDien)" class="img-fluid mx-auto rounded-3 w-75" style="height:200px;object-fit:cover" alt="@i.TenLoai">
+                        </a>
+                        <div class="card-body p-0">
+                            <h5>@i.TenLoai</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="carousel-nav-btn prev btnPrev">
+            <span class="carousel-nav-icon">
+                <i class="fas fa-chevron-left text-white"></i>
+            </span>
+        </button>
+        <button class="carousel-nav-btn next btnNext">
+            <span class="carousel-nav-icon">
+                <i class="fas fa-chevron-right text-white"></i>
+            </span>
+        </button>
+    </div>
+</div>

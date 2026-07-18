@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DoAnLTW.Slider>
+
+<!-- Sliders -->
+<div class="row position-relative">
+    <!-- Phần chuyển động -->
+    <div id="autoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <!-- Hình ảnh -->
+        <div class="carousel-inner">
+            <div class="carousel-item active justify-content-center">
+                <img src="~/Content/Images/slider.png" class="d-block w-100 carousel-img-center" />
+            </div>
+            @foreach (var i in Model)
+            {
+                <div class="carousel-item justify-content-center">
+                    <img src="@Url.Content("~/Content/Images/"+i.HinhAnh)" class="d-block w-100 carousel-img-center" />
+                </div>
+            }
+        </div>
+
+        <!-- Nút chuyển trang về trước -->
+        <button class="carousel-control-prev" data-bs-target="#autoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <!-- Nút chuyển trang về trước -->
+        <button class="carousel-control-next" data-bs-target="#autoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+        <!-- Nút button tròn -->
+        <div class="carousel-indicators">
+            <button data-bs-target="#autoCarousel" data-bs-slide-to="0" class="active"></button>
+            @foreach (var i in Model)
+            {
+                <button data-bs-target="#autoCarousel" data-bs-slide-to="@i.ID"></button>
+            }
+        </div>
+    </div>
+
+    <!-- Phần chữ -->
+    <div class="position-absolute text-center slider-text" style="top:30%; left:0; transform:translateX(-20%); z-index:10;">
+        <h1 class="fw-bold">
+            Cùng <span class="text-logo">Book Heaven</span>
+        </h1>
+        <h1 class="fw-bold">
+            Khám Phá <span class="text-underline">Thế Giới Sách</span>
+        </h1>
+        <p class="pt-3" style="color: #5A6C7D">
+            Nơi Mỗi Trang Sách Là Một Cuộc Phiêu Lưu
+        </p>
+        <a href="@Url.Action("Index", "Product")" class="btn btn-custom rounded-3">Xem thêm <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</div>

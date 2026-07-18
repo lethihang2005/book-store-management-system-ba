@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Xác nhận thanh toán";
+}
+
+<div style="max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1)" class="my-3">
+    <h2 style="color: #333333; text-align: center; padding-bottom: 30px">Thông Tin Thanh Toán</h2>
+
+    @using (Html.BeginForm("Payment", "Payment", FormMethod.Post))
+    {
+        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+            <!-- Cột bên trái -->
+            <section class="address-section" style="flex: 1; min-width: 300px">
+                <h4 style="color: #333333">Địa Chỉ Người Nhận</h4>
+
+                <div class="mt-3">
+                    <label>Họ và Tên:</label>
+                    <input type="text" name="HoTen" required class="form-control" value="@ViewBag.HoTen" />
+                </div>
+
+                <div class="mt-3">
+                    <label>Địa Chỉ:</label>
+                    <input type="text" name="DiaChiGiaoHang" required class="form-control" value="@ViewBag.DiaChi" />
+                </div>
+
+                <div class="mt-3">
+                    <label>Số Điện Thoại:</label>
+                    <input type="tel" name="DienThoai" required class="form-control" value="@ViewBag.DienThoai" />
+                </div>
+
+                <div class="mt-3">
+                    <label>Ghi chú đơn hàng:</label>
+                    <textarea name="GhiChu" rows="3" placeholder="Nhập ghi chú cho đơn hàng (nếu có)..." class="form-control"></textarea>
+                </div>
+            </section>
+
+            <!-- Cột bên phải -->
+            <section class="payment-section" style="flex: 1; min-width: 300px">
+                <h4 style="color: #333">Phương Thức Thanh Toán</h4>
+
+                <label class="pb-2"><input type="radio" name="MaPTTT" value="1" required /> Thanh toán khi nhận hàng (COD)</label>
+                <br />
+                <label class="pb-2"><input type="radio" name="MaPTTT" value="2" /> Chuyển Khoản Ngân Hàng</label>
+                <br />
+                <label class="pb-2"><input type="radio" name="MaPTTT" value="3" /> Ví Điện Tử Momo</label>
+                <br />
+                <label><input type="radio" name="MaPTTT" value="4" /> ZaloPay</label>
+
+                <h4 style="color: #333; margin-top: 20px;">Mã Khuyến Mãi (Nếu có)</h4>
+                @Html.DropDownList("MaKhuyenMai", new SelectList(ViewBag.KhuyenMaiList, "Value", "Text"), "-- Chưa áp dụng khuyến mãi --", new { @class = "form-control" })
+
+                <button type="submit" class="btn btn-custom w-100 mt-4">
+                    Xác Nhận Đặt Hàng
+                </button>
+            </section>
+        </div>
+    }
+</div>

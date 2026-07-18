@@ -1,0 +1,32 @@
+﻿@model List<DoAnLTW.Sach>
+@using System.Globalization
+<!-- Sản phẩm -->
+<div class="row" id="product-list">
+    @foreach (var i in Model)
+    {
+        <div class="col-lg-3 col-md-4 col-6 product mt-4">
+            <div class="card card-body border-0 rounded-4">
+                <a href="@Url.Action("Detail", "Product", new { id = i.MaSach })">
+                    <img src="@Url.Content("~/Content/Images/"+i.AnhBia)" class="img-fluid mx-auto w-100" style="height: 250px; object-fit: cover" alt="...">
+                </a>
+                <div class="d-flex justify-content-between gap-3">
+                    <div class="text-start flex-grow-1 overflow-hidden">
+                        <p class="card-text text-danger title my-1">@i.TacGia</p>
+                        <h5 class="card-title title my-2">@i.TenSach</h5>
+                        <span class="card-text fw-bold text-danger">@i.GiaBan.Value.ToString("N0", new CultureInfo("en-US")) đ</span><br />
+                        <span class="card-text text-secondary text-decoration-line-through">@i.GiaGoc.Value.ToString("N0", new CultureInfo("en-US")) đ</span>
+                    </div>
+                    <div class="d-flex flex-column gap-2 my-2">
+                        <a href="@Url.Action("AddToFavourite", "Favourite", new { id = i.MaSach })" class="btn btn-icon btn-sm rounded-circle p-2">
+                            <i class="fas fa-heart"></i>
+                        </a>
+                        <a href="@Url.Action("AddToCart", "Cart", new { id = i.MaSach })" class="btn btn-icon btn-sm rounded-circle p-2">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

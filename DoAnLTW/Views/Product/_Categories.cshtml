@@ -1,0 +1,17 @@
+﻿@model IEnumerable<DoAnLTW.LoaiSach>
+
+<!-- Categories -->
+<div class="mb-3">
+    <h3 class="text-uppercase fw-bold">Thể loại</h3>
+    <div style="max-height: 250px; overflow-y: auto;">
+        @foreach (var i in Model)
+        {
+            <div class="py-2">
+                <label class="d-flex align-items-center w-100" style="cursor: pointer; margin-bottom: 0;">
+                    <input name="type" type="checkbox" id="type-@i.MaLoai" value="@i.MaLoai" style="margin-top: 2px; flex-shrink: 0;" />
+                    <span class="title flex-grow-1 ms-2">@i.TenLoai</span>
+                </label>
+            </div>
+        }
+    </div>
+</div>
