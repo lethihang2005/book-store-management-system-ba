@@ -1,40 +1,63 @@
-# Book Store Management System - BA Portfolio
+# 📚 Online Bookstore Management System
 
-## Project Overview
+Business Analysis & Web Application Development | Personal Project
 
-This project focuses on analyzing, designing, and developing an online bookstore management system.
+---
 
-The project is developed as a personal Business Analyst portfolio project to demonstrate skills in requirement analysis, system modeling, database design, and software documentation.
+## 📖 Project Overview
 
-## Business Context
+This project focuses on analyzing, designing, and developing an Online Bookstore Management System that supports customers in browsing books, managing shopping carts, placing orders, and enables bookstore administrators to manage products, customers, and orders.
 
-Traditional bookstore management may face difficulties in managing book information, customer orders, inventory, and sales activities.
+The project demonstrates Business Analysis, System Analysis & Design, Database Design, and Web Application Development skills.
 
-This system aims to provide an online platform to support bookstore operations and improve the management process.
+---
 
-## Project Objectives
+## 🎯 Business Problem
 
-- Manage book information and categories.
-- Support customers in searching and purchasing books.
-- Manage customer information and orders.
-- Store and manage bookstore data efficiently.
+Traditional bookstore management often faces challenges in:
 
-## Current Status
+- Managing book information efficiently
+- Tracking customer orders
+- Managing inventory
+- Organizing sales information
+- Providing customers with a convenient online purchasing experience
 
-🚧 In Development
+This system aims to digitize bookstore operations and improve management efficiency.
 
-The current version includes the initial source code and database design.
-Additional BA documentation will be added during project development.
+---
 
-## Main Features
+## 🎯 Project Objectives
+
+- Analyze business requirements
+- Define system scope
+- Identify stakeholders and actors
+- Design business processes
+- Model system behaviors
+- Design database structure
+- Develop a web-based bookstore system
+- Validate system functionality through testing
+
+---
+
+# 👥 Stakeholders
+
+- Customer
+- Bookstore Administrator
+- Store Manager
+
+---
+
+# 👤 Actors
 
 ### Customer
 
-- View book list
+- Register/Login
+- Browse books
 - Search books
 - View book details
-- Manage shopping cart
+- Add books to cart
 - Place orders
+- View order history
 
 ### Administrator
 
@@ -43,15 +66,156 @@ Additional BA documentation will be added during project development.
 - Manage customers
 - Manage orders
 
-## Technologies
+---
 
-- ASP.NET MVC
+# ✨ Functional Features
+
+## Customer
+
+- View book list
+- Search books
+- View book details
+- Shopping cart management
+- Checkout
+- Order history
+
+## Administrator
+
+- Dashboard
+- Book management
+- Category management
+- Customer management
+- Order management
+
+---
+
+# 🛠 Business Analysis Deliverables
+
+This project includes Business Analysis artifacts such as:
+
+- Business Requirement Analysis
+- Stakeholder Identification
+- System Scope Definition
+- Functional Requirements
+- Database Design
+- UML Modeling
+- Test Scenario Design
+
+The following documents are being completed and will be uploaded:
+
+- Business Requirements Document (BRD)
+- Software Requirements Specification (SRS)
+- Use Case Diagram
+- Activity Diagram
+- Sequence Diagram
+- Entity Relationship Diagram (ERD)
+- Database Design
+- Functional Specification
+- Wireframes (Figma)
+- Test Scenarios
+
+---
+
+# 🏗 System Modeling
+
+The project applies UML modeling techniques including:
+
+- Use Case Diagram
+- Activity Diagram
+- Sequence Diagram
+- Entity Relationship Diagram (ERD)
+
+---
+
+# 💻 Technologies
+
+Backend
+
 - C#
-- SQL Server
-- HTML/CSS
+- ASP.NET MVC
+
+Frontend
+
+- HTML
+- CSS
 - JavaScript
 - Bootstrap
 
-## Database
+Database
 
-The SQL Server database script is included in:
+- SQL Server
+
+Tools
+
+- Visual Studio
+- SQL Server Management Studio
+- Draw.io
+- Figma
+- Git
+- GitHub
+
+---
+
+# 🧪 Testing
+
+The system is validated through:
+
+- Functional Testing
+- Test Scenarios
+- Requirement Validation
+
+---
+
+# 📂 Repository Structure
+
+```
+BookStoreManagementSystem
+│
+├── DoAnLTW/                  Source code
+├── BookDB.sql                Database script
+├── Documents/                BA Documents (Coming Soon)
+│
+├── BRD
+├── SRS
+├── Use Case Diagram
+├── Activity Diagram
+├── Sequence Diagram
+├── ERD
+├── Wireframes
+├── Test Scenarios
+│
+└── README.md
+```
+
+---
+
+# 🚧 Current Status
+
+🟢 Ongoing
+
+Completed
+
+- Requirement Analysis
+- Database Design
+- Core System Development
+
+In Progress
+
+- BA Documentation
+- UML Diagrams
+- Test Documentation
+
+---
+
+# 📌 Skills Demonstrated
+
+- Requirement Analysis
+- Business Process Analysis
+- System Analysis
+- UML Modeling
+- Database Design
+- Functional Specification
+- Software Documentation
+- ASP.NET MVC Development
+- SQL Server
+- Functional Testing
