@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DoAnLTW.HoaDon>
+@using System.Globalization
+@{
+    ViewBag.Title = "Quản lý đơn hàng";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h3>🧾 Đơn hàng</h3>
+
+<div class="table-responsive shadow-sm rounded">
+    <table class="table table-hover mb-0">
+    <thead class="table-primary">
+        <tr>
+            <th>Khách hàng</th>
+            <th>Ngày lập</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hd in Model)
+        {
+            <tr>
+
+                <td>@(hd.NguoiDung != null ? hd.NguoiDung.HoTen : "Không xác định")</td>
+
+
+                <td>@(hd.NgayLap.HasValue ? hd.NgayLap.Value.ToString("dd/MM/yyyy") : "--")</td>
+
+
+                <td>@((hd.ThanhTien.HasValue ? hd.ThanhTien.Value : 0).ToString("N0", new CultureInfo("en-US"))) đ</td>
+
+
+                <td>
+                    @if (hd.TinhTrang == 1)
+                    {
+                        <span class="badge bg-warning">Chờ xử lý</span>
+                    }
+                    else if (hd.TinhTrang == 2)
+                    {
+                        <span class="badge bg-primary">Đang giao</span>
+                    }
+                    else if (hd.TinhTrang == 3)
+                    {
+                        <span class="badge bg-success">Hoàn tất</span>
+                    }
+                    else if (hd.TinhTrang == 4)
+                    {
+                        <span class="badge bg-danger">Đã hủy</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Không xác định</span>
+                    }
+                </td>
+
+
+                <td>
+                    @Html.ActionLink(
+                        "📋 Cập nhật",
+                        "CapNhatTrangThai",
+                        new { maHD = hd.MaHD },
+                        new { @class = "btn btn-sm btn-info" }
+                    )
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

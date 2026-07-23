@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet">
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <style>
+        .message {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            font-weight: 600;
+            z-index: 9999;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideInToast 0.4s forwards;
+            min-width: 300px;
+            border-left: 4px solid transparent;
+            font-size: 14px;
+        }
+
+        .message.success {
+            background-color: #ECFDF5;
+            color: #065F46;
+            border-left-color: #10B981;
+        }
+
+        .message.error {
+            background-color: #FEF2F2;
+            color: #7F1D1D;
+            border-left-color: #EF4444;
+        }
+
+        .message.warning {
+            background-color: #FFFBEB;
+            color: #78350F;
+            border-left-color: #F59E0B;
+        }
+
+        @@keyframes slideInToast {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="toast-success" class="message success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["Warning"] != null)
+    {
+        <div id="toast-success" class="message warning">
+            @TempData["Warning"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div id="toast-success" class="message error">
+            @TempData["Error"]
+        </div>
+    }
+    <!-- Header -->
+    <header style="position:relative">
+        <!-- Topbar -->
+        <div class="container-fluid">
+            <div class="row p-2 mx-auto" style="max-width: 1400px">
+                <!-- Lời chào + Hotline -->
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-12 d-none d-md-block">
+                    <div class="d-flex align-items-center h-100">
+                        <span class="fw-semibold me-3">Chào mừng bạn đến với Book Heaven</span>
+                        <img src="https://bizweb.dktcdn.net/100/601/974/themes/1047016/assets/icon_topbar_2.png?1761011107533" title="Hotline" width="22" height="22" class="me-2" />
+                        <span class="fw-bold">1900 1478</span>
+                    </div>
+                </div>
+
+                <!-- Đăng nhập / Đăng ký -->
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 justify-content-center justify-content-md-end d-flex align-items-center">
+                    @if (Session["User"] == null)
+                    {
+                        <i class="fas fa-user fa-lg text-dark me-2"></i>
+                        <div>
+                            <a href="@Url.Action("Login", "User")" class="text-dark text-decoration-none">Đăng nhập</a>
+                            <span>/</span>
+                            <a href="@Url.Action("Register", "User")" class="text-dark text-decoration-none">Đăng ký</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center text-decoration-none text-dark dropdown-toggle"
+                               id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="@Url.Content("~/Content/Images/"+((NguoiDung)Session["User"]).AnhDaiDien)"
+                                     class="rounded-circle me-2" style="width:35px; height:35px; object-fit:cover;" alt="Avatar" />
+                                <span>
+                                    @((string.IsNullOrEmpty(((NguoiDung)Session["User"]).HoTen)) ?
+                                    ((NguoiDung)Session["User"]).TenDangNhap : ((NguoiDung)Session["User"]).HoTen)
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="userDropdown">
+                                @if (((NguoiDung)Session["User"]).IDVaiTro == 1)
+                                {
+                                    <li>
+                                        <a class="dropdown-item" href="@Url.Action("Index", "SanPham")">
+                                            <i class="fas fa-chart-line me-2"></i> Quản lý hệ thống
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                }
+                                <li>
+                                    <a class="dropdown-item" href="@Url.Action("Profile", "User")">
+                                        <i class="fas fa-user me-2"></i> Tài khoản của tôi
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item text-danger" href="@Url.Action("Logout", "User")" onclick="return confirm('Bạn có chắc chắn muốn đăng xuất không?')">
+                                        <i class="fas fa-sign-out-alt me-2"></i> Đăng xuất
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Thanh tìm kiếm -->
+        @using (Html.BeginForm("TimKiemTheoTenSach", "Product", FormMethod.Get))
+        {
+            <div id="searchBarOverlay" class="search-overlay">
+                <div class="container-fluid mx-auto" style="max-width:600px">
+                    <div class="search-form-bar mx-auto">
+                        <input type="search" name="key" placeholder="Tìm kiếm..." class="search-input" aria-label="Search">
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button type="button" class="close-btn" id="closeSearchBtn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <!-- Offcanvas Menu -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header" style="background-color: #7ba3d1;">
+                <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-dark py-1 my-3 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")"
+                           href="@Url.Action("Index", "Home")">
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-dark py-1 my-3 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ? "active" : "")"
+                           href="@Url.Action("Index", "Product")">
+                            Sản phẩm
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-dark py-1 my-3 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "About" ? "active" : "")"
+                           href="@Url.Action("Index", "About")">
+                            Giới thiệu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-dark py-1 my-3 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "News" ? "active" : "")"
+                           href="#">
+                            Tin tức
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-dark py-1 my-3 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "Voucher" ? "active" : "")"
+                           href="@Url.Action("Index", "Voucher")">
+                            Khuyến mãi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-dark py-1 my-3 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")"
+                           href="#">
+                            Liên hệ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main header -->
+    <div class="container-fluid header-main">
+        <div class="row align-items-center py-3 mx-auto" style="max-width:1400px">
+            <!-- Logo -->
+            <div class="col-lg-3 col-md-4 col-6">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/Content/Images/logo.png" class="img-fluid w-100" title="Book Heaven" />
+                </a>
+            </div>
+
+            <!-- Menu -->
+            <div class="col-lg-7 d-none d-lg-flex position-relative">
+                <div class="d-flex align-items-center w-100">
+                    <!-- Nút mũi tên trái -->
+                    <button id="menuLeft" class="btn btn-light shadow-sm d-none" type="button"
+                            style="z-index:10; width:36px; height:36px; border-radius:50%; flex-shrink: 0; margin-right: 8px;">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <!-- Vùng menu cuộn -->
+                    <div id="menuWrapper" class="flex-grow-1 overflow-hidden mx-auto">
+                        <nav id="menuScroll" style="overflow-x:auto; scrollbar-width:none;">
+                            <ul class="nav flex-nowrap align-items-center m-0" style="white-space:nowrap; justify-content: space-around;">
+                                <li class="nav-item">
+                                    <a class="nav-link fw-semibold text-dark px-0 mx-3 @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")"
+                                       href="@Url.Action("Index", "Home")">
+                                        Trang chủ
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link fw-semibold text-dark px-0 mx-3 @(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ? "active" : "")"
+                                       href="@Url.Action("Index", "Product")">
+                                        Sản phẩm
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link fw-semibold text-dark px-0 mx-3 @(ViewContext.RouteData.Values["Controller"].ToString() == "About" ? "active" : "")"
+                                       href="@Url.Action("Index", "About")">
+                                        Giới thiệu
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link fw-semibold text-dark px-0 mx-3 @(ViewContext.RouteData.Values["Controller"].ToString() == "News" ? "active" : "")"
+                                       href="#">
+                                        Tin tức
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link fw-semibold text-dark px-0 mx-3 @(ViewContext.RouteData.Values["Controller"].ToString() == "Voucher" ? "active" : "")"
+                                       href="@Url.Action("Index", "Voucher")">
+                                        Khuyến mãi
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link fw-semibold text-dark px-0 mx-3 @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")"
+                                       href="#">
+                                        Liên hệ
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Nút mũi tên phải -->
+                    <button id="menuRight" class="btn btn-light shadow-sm d-none" type="button"
+                            style="z-index:10; width:36px; height:36px; border-radius:50%; flex-shrink: 0; margin-left: 8px;">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Icons -->
+            <div class="col-lg-2 col-md-8 col-6 d-flex justify-content-end align-items-center gap-2 gap-md-3">
+                <!-- Nút tìm kiếm -->
+                <a href="#" class="text-decoration-none" id="searchIconToggle">
+                    <div class="icon-circle rounded-circle d-flex justify-content-center align-items-center" title="Tìm kiếm" style="width:35px; height:35px">
+                        <i class="fas fa-search text-white"></i>
+                    </div>
+                </a>
+
+                <!-- Yêu thích -->
+                <a href="@Url.Action("Index", "Favourite")" class="text-decoration-none position-relative">
+                    <div class="icon-circle rounded-circle d-flex justify-content-center align-items-center" title="Yêu thích" style="width:35px; height:35px">
+                        <i class="fas fa-heart text-white"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">
+                            @Html.Action("_FavouriteBadge", "Favourite")
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Giỏ hàng -->
+                <a href="@Url.Action("Index", "Cart")" class="text-decoration-none position-relative">
+                    <div class="icon-circle rounded-circle d-flex justify-content-center align-items-center" title="Giỏ hàng" style="width:35px; height:35px">
+                        <i class="fas fa-shopping-cart text-white"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">
+                            @Html.Action("_CartBadge", "Cart")
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Nút mở menu -->
+                <button class="btn icon-circle rounded-circle d-flex justify-content-center align-items-center d-lg-none" type="button" style="width:35px; height:35px"
+                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Body -->
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background-color:#e8f2f7">
+        <div class="container-fluid mx-auto" style="max-width: 1400px">
+            <div class="row g-4">
+                <!-- Logo + Thông tin liên hệ -->
+                <div class="col-lg-4 col-md-6">
+                    <!-- Logo -->
+                    <div class="mb-3">
+                        <a href="#">
+                            <img src="~/Content/Images/logo.png" class="img-fluid w-75" title="Book Heaven" />
+                        </a>
+                    </div>
+                    <!-- Thông tin liên hệ -->
+                    <p class="mb-1"><i class="fa-solid fa-location-dot me-2"></i> 140 Lê Trọng Tấn, Quận Tân Phú, TP.HCM</p>
+                    <p class="mb-1"><i class="fa-solid fa-phone me-2"></i> 1900 6750</p>
+                    <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i> support@bookheaven.vn</p>
+                    <p><i class="fas fa-globe me-2"></i> www.bookheaven.vn</p>
+                </div>
+
+                <!-- Chính sách -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-3">Về chúng tôi</h5>
+                    <ul class="list-unstyled">
+                        <li class="nav-item">
+                            <a class="nav-link pb-1 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")"
+                               href="@Url.Action("Index", "Home")">
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-1 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "Product" ? "active" : "")"
+                               href="@Url.Action("Index", "Product")">
+                                Sản phẩm
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-1 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "About" ? "active" : "")"
+                               href="@Url.Action("Index", "About")">
+                                Giới thiệu
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-1 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "News" ? "active" : "")"
+                               href="#">
+                                Tin tức
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-1 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "Voucher" ? "active" : "")"
+                               href="@Url.Action("Index", "Voucher")">
+                                Khuyến mãi
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-1 px-0 @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")"
+                               href="#">
+                                Liên hệ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hướng dẫn -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-3">Hướng Dẫn</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark text-decoration-none d-block my-1">Điều khoản sử dụng</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none d-block my-1">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none d-block my-1">Hướng dẫn đổi trả</a></li>
+                        <li><a href="#" class="text-dark text-decoration-none d-block my-1">Hướng dẫn thanh toán</a></li>
+                    </ul>
+                </div>
+
+                <!-- Đăng ký email -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">Đăng Ký Nhận Thông Tin</h5>
+                    <p>Nhập email để nhận ưu đãi và tin tức mới nhất</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Nhập email của bạn">
+                        <button class="btn btn-custom">Đăng ký</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/bootstrap/script.js"></script>
+    <script src="~/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        setTimeout(function () {
+            const toast = document.getElementById("toast-success");
+            if (toast) {
+                toast.style.transition = "0.5s";
+                toast.style.opacity = "0";
+                toast.style.transform = "translateY(-10px)";
+
+                setTimeout(() => toast.remove(), 500);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

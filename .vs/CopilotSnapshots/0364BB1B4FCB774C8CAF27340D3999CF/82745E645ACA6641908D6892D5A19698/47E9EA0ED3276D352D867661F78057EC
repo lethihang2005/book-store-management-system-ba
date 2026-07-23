@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet">
+    <style>
+        /* Modern Navy Blue Theme */
+        :root {
+            --primary-navy: #0F172A;
+            --secondary-navy: #1E3A5F;
+            --accent-blue: #3B82F6;
+            --hover-blue: #2563EB;
+            --light-bg: #F8FAFC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Lexend", sans-serif;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            line-height: 1.5;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background: linear-gradient(180deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+            padding-top: 70px;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .sidebar a {
+            color: rgba(255, 255, 255, 0.85);
+            display: block;
+            padding: 14px 20px;
+            text-decoration: none;
+            position: relative;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar a:hover {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.15) 0%, transparent 100%);
+            color: var(--white);
+            border-left-color: var(--accent-blue);
+            padding-left: 24px;
+        }
+
+        .sidebar a.menu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar .arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar .submenu {
+            display: none;
+            padding-left: 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .sidebar .submenu.show {
+            display: block;
+            max-height: 500px;
+        }
+
+        .sidebar .submenu a {
+            padding: 10px 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .submenu a:hover {
+            color: var(--white);
+            border-left-color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Navbar Styles */
+        .navbar-custom {
+            background: var(--white);
+            color: var(--text-dark);
+            height: 70px;
+            padding: 0 30px;
+            position: fixed;
+            top: 0;
+            left: 250px;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-md);
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .navbar-custom > div:first-child {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-custom a {
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .navbar-custom a:hover {
+            background: var(--light-bg);
+            color: var(--accent-blue) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Content Area */
+        .content {
+            margin-left: 250px;
+            margin-top: 70px;
+            padding: 30px;
+            min-height: calc(100vh - 70px);
+        }
+
+        /* Table Styles */
+        table {
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th {
+            background: linear-gradient(135deg, var(--secondary-navy) 0%, var(--hover-blue) 100%);
+            color: var(--white);
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            border: none;
+        }
+
+        table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #E5E7EB;
+            font-size: 14px;
+        }
+
+        table tbody tr {
+            transition: background-color 0.2s ease;
+        }
+
+        table tbody tr:hover {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+
+        /* Form Controls */
+        input[type="checkbox"], input[type="radio"] {
+            transform: scale(1.2);
+            margin-right: 8px;
+            accent-color: var(--accent-blue);
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select,
+        textarea {
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-family: "Lexend", sans-serif;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Button Styles */
+        button, .btn {
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--hover-blue) 100%);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Toast Message Styles */
+        .toast-message {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            font-weight: 600;
+            z-index: 9999;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideInToast 0.4s forwards;
+            min-width: 300px;
+            border-left: 4px solid transparent;
+            font-size: 14px;
+        }
+
+        .toast-success {
+            background-color: #ECFDF5;
+            color: #065F46;
+            border-left-color: #10B981;
+        }
+
+        .toast-error {
+            background-color: #FEF2F2;
+            color: #7F1D1D;
+            border-left-color: #EF4444;
+        }
+
+        .toast-warning {
+            background-color: #FFFBEB;
+            color: #78350F;
+            border-left-color: #F59E0B;
+        }
+
+        .toast-message.message {
+            background-color: #ECFDF5;
+            color: #065F46;
+            border-left-color: #10B981;
+        }
+
+        .toast-message.error {
+            background-color: #FEF2F2;
+            color: #7F1D1D;
+            border-left-color: #EF4444;
+        }
+
+        @@keyframes slideInToast {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @@media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+                padding-top: 60px;
+            }
+
+            .navbar-custom {
+                left: 200px;
+                height: 60px;
+                padding: 0 20px;
+            }
+
+            .content {
+                margin-left: 200px;
+                margin-top: 60px;
+                padding: 20px;
+            }
+
+            .toast-message {
+                right: 15px;
+                min-width: 280px;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .sidebar {
+                width: 100%;
+                left: -100%;
+                transition: left 0.3s ease;
+                height: 100vh;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .navbar-custom {
+                left: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="toast-success" class="message">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div id="toast-success" class="error">
+            @TempData["Error"]
+        </div>
+    }
+    <div class="sidebar">
+        <a href="#" class="menu-toggle" data-target="#menuSanPham">📦 Sản phẩm <span class="arrow">▼</span></a>
+        <div class="submenu" id="menuSanPham">
+            <a href="@Url.Action("Index","SanPham")">Tất cả sản phẩm</a>
+            <a href="@Url.Action("Index","BangLoai")">Loại sản phẩm</a>
+        </div>
+
+        <a href="#" class="menu-toggle" data-target="#menuDonHang">🧾 Đơn hàng <span class="arrow">▼</span></a>
+        <div class="submenu" id="menuDonHang">
+            <a href="@Url.Action("Index","DonHang")">Tất cả đơn</a>
+            <a href="@Url.Action("ThongKeDoanhThu","DonHang")">Thống kê doanh thu</a>
+        </div>
+    </div>
+
+    <div class="navbar-custom d-flex justify-content-between align-items-center">
+        <div><strong>Admin @(((NguoiDung)Session["User"]).HoTen)</strong></div>
+        <div class="d-flex justify-content-end">
+            <a href="@Url.Action("Index", "Home")" class="text-decoration-none">← Quay lại trang chủ</a>
+            <a href="@Url.Action("Logout", "User")" onclick="return confirm('Bạn có chắc chắn muốn đăng xuất không?')" class="text-decoration-none">↪ Đăng xuất</a>
+        </div>
+    </div>
+
+    <div class="content">
+        @RenderBody()
+    </div>
+
+
+    <script src="~/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.menu-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.dataset.target);
+                target.classList.toggle('show');
+            });
+        });
+    </script>
+
+    <script>
+        setTimeout(function () {
+            const toast = document.getElementById("toast-success");
+            if (toast) {
+                toast.style.transition = "0.5s";
+                toast.style.opacity = "0";
+                toast.style.transform = "translateY(-10px)";
+
+                setTimeout(() => toast.remove(), 500);
+            }
+        }, 3000);
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

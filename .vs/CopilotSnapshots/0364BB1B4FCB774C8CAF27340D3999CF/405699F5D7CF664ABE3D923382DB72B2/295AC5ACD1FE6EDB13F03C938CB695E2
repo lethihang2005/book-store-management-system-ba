@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet">
+    <style>
+        /* Admin-Specific Layout Styles */
+        :root {
+            --primary-navy: #0F172A;
+            --secondary-navy: #1E3A5F;
+            --tertiary-navy: #2D5A8C;
+            --accent-blue: #3B82F6;
+            --hover-blue: #2563EB;
+            --light-bg: #F8FAFC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --border-light: #E5E7EB;
+            --white: #FFFFFF;
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background: linear-gradient(180deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+            padding-top: 70px;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .sidebar a {
+            color: rgba(255, 255, 255, 0.85);
+            display: block;
+            padding: 14px 20px;
+            text-decoration: none;
+            position: relative;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar a:hover {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.15) 0%, transparent 100%);
+            color: var(--white);
+            border-left-color: var(--accent-blue);
+            padding-left: 24px;
+        }
+
+        .sidebar a.menu-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar .arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar .submenu {
+            display: none;
+            padding-left: 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .sidebar .submenu.show {
+            display: block;
+            max-height: 500px;
+        }
+
+        .sidebar .submenu a {
+            padding: 10px 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .submenu a:hover {
+            color: var(--white);
+            border-left-color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .navbar-custom {
+            background: var(--white);
+            color: var(--text-dark);
+            height: 70px;
+            padding: 0 30px;
+            position: fixed;
+            top: 0;
+            left: 250px;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-md);
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .navbar-custom > div:first-child {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-custom a {
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent-blue) !important;
+            text-decoration: none;
+        }
+
+        .navbar-custom a:hover {
+            background: var(--light-bg);
+            color: var(--hover-blue) !important;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            margin-left: 250px;
+            margin-top: 70px;
+            padding: 30px;
+            min-height: calc(100vh - 70px);
+        }
+
+        h3 {
+            color: var(--primary-navy);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h3::before {
+            content: '';
+            width: 4px;
+            height: 32px;
+            background: linear-gradient(180deg, var(--accent-blue), var(--hover-blue));
+            border-radius: 2px;
+        }
+
+        @@media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .navbar-custom {
+                left: 200px;
+            }
+
+            .content {
+                margin-left: 200px;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .sidebar {
+                width: 100%;
+                left: -100%;
+                transition: left 0.3s ease;
+            }
+
+            .navbar-custom {
+                left: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+                left: 0;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="toast-success" class="message">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div id="toast-success" class="error">
+            @TempData["Error"]
+        </div>
+    }
+    <div class="sidebar">
+        <a href="#" class="menu-toggle" data-target="#menuSanPham">📦 Sản phẩm <span class="arrow">▼</span></a>
+        <div class="submenu" id="menuSanPham">
+            <a href="@Url.Action("Index","SanPham")">Tất cả sản phẩm</a>
+            <a href="@Url.Action("Index","BangLoai")">Loại sản phẩm</a>
+        </div>
+
+        <a href="#" class="menu-toggle" data-target="#menuDonHang">🧾 Đơn hàng <span class="arrow">▼</span></a>
+        <div class="submenu" id="menuDonHang">
+            <a href="@Url.Action("Index","DonHang")">Tất cả đơn</a>
+            <a href="@Url.Action("ThongKeDoanhThu","DonHang")">Thống kê doanh thu</a>
+        </div>
+    </div>
+
+    <div class="navbar-custom d-flex justify-content-between align-items-center">
+        <div><strong>Admin @(((NguoiDung)Session["User"]).HoTen)</strong></div>
+        <div class="d-flex justify-content-end">
+            <a href="@Url.Action("Index", "Home")" class="text-decoration-none">← Quay lại trang chủ</a>
+            <a href="@Url.Action("Logout", "User")" onclick="return confirm('Bạn có chắc chắn muốn đăng xuất không?')" class="text-decoration-none">↪ Đăng xuất</a>
+        </div>
+    </div>
+
+    <div class="content">
+        @RenderBody()
+    </div>
+
+
+    <script src="~/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.menu-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.dataset.target);
+                target.classList.toggle('show');
+            });
+        });
+    </script>
+
+    <script>
+        setTimeout(function () {
+            const toast = document.getElementById("toast-success");
+            if (toast) {
+                toast.style.transition = "0.5s";
+                toast.style.opacity = "0";
+                toast.style.transform = "translateY(-10px)";
+
+                setTimeout(() => toast.remove(), 500);
+            }
+        }, 3000);
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

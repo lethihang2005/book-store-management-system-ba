@@ -1,0 +1,73 @@
+﻿@model IEnumerable<DoAnLTW.Sach>
+@using System.Globalization
+@{
+    ViewBag.Title = "Quản lý hệ thống";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 style="margin: 0;">📦 Quản lý sản phẩm</h3>
+    <a class="btn btn-primary" href="@Url.Action("ThemSanPham","SanPham")">+ Thêm sản phẩm</a>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+        <form method="get" action="/SanPham/Timkiemtheoten" class="d-flex gap-2">
+            <input type="text" name="keyword" class="form-control" placeholder="Tìm theo tên sách..." />
+            <button type="submit" class="btn btn-primary">🔍 Tìm kiếm</button>
+        </form>
+    </div>
+</div>
+
+<form method="post" action="@Url.Action("LuuThayDoiSanPham","SanPham")">
+    <div class="table-responsive shadow-sm rounded mb-3">
+        <table class="table table-hover">
+        <thead class="table-primary">
+            <tr class="text-center align-middle">
+                <th style="width:5%">Ảnh</th>
+                <th style="width:15%">Tên sách</th>
+                <th style="width:12%">Loại</th>
+                <th style="width:13%">NXB</th>
+                <th style="width:8%">Giá bán</th>
+                <th style="width:17%">Số lượng</th>
+                <th style="width:10%">Trạng thái</th>
+                <th style="width:10%">Khuyến mãi</th>
+                <th style="width:10%">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sp in Model)
+            {
+                <tr class="align-middle">
+                    <td class="text-center">
+                        <img src="@Url.Content("~/Content/Images/" + sp.AnhBia)" width="50" />
+                    </td>
+                    <td>@sp.TenSach</td>
+                    <td>@(sp.LoaiSach!=null?sp.LoaiSach.TenLoai:"")</td>
+                    <td>@(sp.NXB != null ? sp.NXB.TenNXB : "")</td>
+                    <td>@(sp.GiaBan.HasValue ? sp.GiaBan.Value.ToString("N0", new CultureInfo("en-US")) : "0") đ</td>
+
+                    <td>
+                        <input type="number" name="SoLuongTon_@sp.MaSach" value="@sp.SoLuongTon" min="0" class="form-control" />
+                    </td>
+
+                    <td>
+                        <label><input type="radio" name="TrangThai_@sp.MaSach" value="1" @(sp.SoLuongTon > 0 ? "checked" : "") /> Còn hàng</label>
+                        <label><input type="radio" name="TrangThai_@sp.MaSach" value="0" @(sp.SoLuongTon == 0 ? "checked" : "") /> Hết hàng</label>
+                    </td>
+
+                    <td class="text-center">
+                        <input type="checkbox" name="KhuyenMai_@sp.MaSach" value="1" @(sp.Sach_KhuyenMai.Any() ? "checked" : "") />
+                    </td>
+
+                    <td>
+                        <a class="btn btn-sm btn-warning mb-2" href="@Url.Action("SuaSanPham","SanPham", new { id = sp.MaSach })">Sửa</a>
+                        <a class="btn btn-sm btn-danger mb-2" href="@Url.Action("XoaSanPham","SanPham", new { id = sp.MaSach })" onclick="return confirm('Bạn có chắc muốn xóa?');">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button type="submit" class="btn btn-success">Lưu tất cả thay đổi</button>
+</form>

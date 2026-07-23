@@ -1,0 +1,547 @@
+﻿body {
+    font-family: "Lexend", sans-serif;
+    color: #2C3E50;
+}
+
+/* ---------- Header Start ---------- */
+.header-main {
+    background: linear-gradient(135deg, #E8F4FC 0%, #F0F8FF 100%);
+    position: sticky;
+    top: 0;
+    z-index: 990;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Link */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: #5B8AC4 !important;
+        text-decoration: none;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 4px;
+        bottom: 0;
+        left: 50%;
+        background-color: #FFD666;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+/* Icon */
+.icon-circle {
+    background-color: #7BA3D1 !important;
+    transition: all 0.3s ease;
+}
+
+    .icon-circle:hover {
+        background-color: #5B8AC4 !important;
+        transform: scale(1.1);
+    }
+
+/* Số trên icon */
+.badge {
+    background-color: #FFD666 !important;
+    color: #2C3E50 !important;
+}
+
+/* Thanh tìn kiếm */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+    .search-overlay.active {
+        transform: translateY(0);
+    }
+
+.search-form-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-btn, .close-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+.search-btn {
+    right: 0;
+    background-color: #7ba3d1;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-btn {
+    right: 55px;
+    color: #999;
+    font-size: 20px;
+}
+/* ---------- Header End ---------- */
+
+
+
+/* ---------- Slider Start ---------- */
+#autoCarousel .carousel-inner {
+    overflow: hidden;
+}
+
+.carousel-img-center {
+    height: 550px;
+    object-fit: cover;
+}
+
+#autoCarousel .carousel-indicators button {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50%;
+}
+
+.slider-text {
+    opacity: 0;
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+    .slider-text h1 {
+        font-size: clamp(1.2rem, 4vw, 3.5rem) !important;
+    }
+
+    .slider-text p {
+        font-size: clamp(0.75rem, 2vw, 1.25rem) !important;
+    }
+
+    .slider-text .btn {
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
+    }
+
+    .slider-text .text-logo {
+        color: #7ba3d1 !important;
+    }
+
+    .slider-text .text-underline {
+        color: #FFB830;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+    }
+
+        .slider-text .text-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            bottom: 0;
+            left: 0;
+            background-color: #FFD666;
+        }
+
+.btn-custom {
+    background-color: #7BA3D1;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 28px;
+    transition: all 0.3s ease;
+}
+
+    .btn-custom:hover {
+        background-color: #5B8AC4;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(123, 163, 209, 0.3);
+    }
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translateX(-20%) scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-20%) scale(1);
+    }
+}
+/* Tablet và màn hình nhỏ hơn */
+@media(max-width:992px) {
+    .carousel-img-center {
+        height: 400px;
+    }
+}
+/* Mobile */
+@media (max-width:768px) {
+    .carousel-img-center {
+        height: 300px;
+    }
+}
+/* Mobile nhỏ */
+@media (max-width:576px) {
+    .slider-text {
+        top: 20% !important;
+    }
+
+    .carousel-img-center {
+        height: 250px;
+    }
+}
+/* ---------- Slider End ---------- */
+
+
+
+/* ---------- Service Start ---------- */
+.service .card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+    .service .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(123, 163, 209, 0.35);
+        transform: scale(1.03);
+    }
+
+        .service .card:hover .rounded-circle {
+            background-color: #5b8ac4;
+        }
+
+        .service .card:hover .text-white {
+            color: #2C3E50 !important;
+        }
+/* ---------- Service End ---------- */
+
+
+
+/* ---------- Category Start ---------- */
+.category-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.categoryCarousel {
+    position: relative;
+    padding: 20px 0;
+}
+/* Container cho items */
+.category-wrapper {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 0;
+}
+/* Mỗi item có width cố định */
+.category-col {
+    flex: 0 0 auto;
+    width: 200px;
+    min-width: 200px;
+}
+/* Style cho nút prev/next */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+    .carousel-nav-btn.prev {
+        left: 5px;
+    }
+
+    .carousel-nav-btn.next {
+        right: 5px;
+    }
+
+.carousel-nav-icon {
+    background-color: #7BA3D1;
+    border-radius: 50%;
+    padding: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-nav-btn:hover .carousel-nav-icon {
+    background-color: #5B8AC4;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(123, 163, 209, 0.4);
+}
+/* Animation fade in khi load */
+.category-col {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+    .category-col:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .category-col:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    .category-col:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+
+    .category-col:nth-child(4) {
+        animation-delay: 0.25s;
+    }
+
+    .category-col:nth-child(5) {
+        animation-delay: 0.3s;
+    }
+
+    .category-col:nth-child(6) {
+        animation-delay: 0.35s;
+    }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Style cho category items */
+.category-item {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .category-item:hover {
+        transform: translateY(-8px);
+    }
+
+    .category-item img {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .category-item:hover img {
+        box-shadow: 0 8px 24px rgba(123, 163, 209, 0.35);
+        transform: scale(1.03);
+    }
+
+    .category-item h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #2C3E50;
+        margin-top: 12px;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .category-item:hover h5 {
+        color: #7BA3D1;
+    }
+/* ---------- Category End ---------- */
+
+
+
+/* ---------- Voucher Start ---------- */
+.voucher .card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+    .voucher .card:hover {
+        box-shadow: 0 8px 24px rgba(123, 163, 209, 0.35);
+    }
+
+.image-overlay-text {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    width: 80%;
+    background-color: #7ba3d1;
+    padding: 15px 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
+    color: white;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.voucher .card:hover .image-overlay-text {
+    background-color: #5b8ac4;
+    color: #2C3E50;
+}
+/* ---------- Voucher End ---------- */
+
+
+
+/* ---------- Review Start ---------- */
+.review-col {
+    flex: 0 0 auto;
+    width: 580px;
+    min-width: 580px;
+    margin-right: 25px;
+}
+
+.review.col:last-child {
+    margin-right: 0;
+}
+/* ---------- Review End ---------- */
+
+
+
+/* ---------- Product Start ---------- */
+.title {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product .card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .product .card:hover {
+        box-shadow: 0 8px 24px rgba(123, 163, 209, 0.35);
+    }
+
+.custom-pagination .page-item .page-link {
+    border: none;
+    border-radius: 12px !important;
+    margin: 0 4px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #2c3e50;
+    background-color: #f0f8ff;
+    transition: all 0.2s;
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: #7ba3d1;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-custom {
+    color: #7BA3D1;
+    border-color: #7BA3D1;
+    background-color: transparent;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .btn-outline-custom:hover {
+        color: #2c3e50;
+        background-color: #7BA3D1;
+        border-color: #7BA3D1;
+    }
+
+.dropdown .btn-outline-custom:focus {
+    color: #2c3e50;
+    background-color: #7BA3D1;
+    border-color: #7BA3D1;
+}
+
+.btn-outline-custom:active:focus {
+    box-shadow: 0 0 0 0.25rem rgba(123, 163, 209, 0.5);
+}
+
+.btn-outline-custom:disabled {
+    color: #7BA3D1;
+    background-color: transparent;
+    border-color: #7BA3D1;
+    opacity: 0.65;
+}
+
+.btn-icon {
+    background-color: #7BA3D1;
+    border: none;
+    color: white;
+    width: 35px;
+    height: 35px;
+    transition: all 0.3s ease;
+}
+
+    .btn-icon:hover {
+        background-color: #5B8AC4;
+        box-shadow: 0 4px 12px rgba(123, 163, 209, 0.3);
+    }
+/* ---------- Product End ---------- */
+
+/* ---------- Message Start ---------- */
+/*.message {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-weight: bold;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInToast 0.5s forwards;
+}
+
+@keyframes fadeInToast {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}*/
+/* ---------- Message End ---------- */
