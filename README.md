@@ -1,65 +1,67 @@
 # 📚 Online Bookstore Management System
 
-Business Analysis & Web Application Development | Personal Project
+**Business Analysis & System Development Project**
+
+A Business Analyst portfolio project focusing on requirements analysis, system design, UML modeling, database design, testing documentation, and web application development for an online bookstore system.
 
 ---
 
 ## 📖 Project Overview
 
-This project focuses on analyzing, designing, and developing an Online Bookstore Management System that supports customers in browsing books, managing shopping carts, placing orders, and enables bookstore administrators to manage products, customers, and orders.
+The Online Bookstore Management System is designed to support bookstore operations by providing customers with an online platform to browse, search, and place orders for books. The system also enables administrators to manage books, categories, customers, and orders efficiently.
 
-The project demonstrates Business Analysis, System Analysis & Design, Database Design, and Web Application Development skills.
+This project demonstrates practical experience in:
 
----
-
-## 🎯 Business Problem
-
-Traditional bookstore management often faces challenges in:
-
-- Managing book information efficiently
-- Tracking customer orders
-- Managing inventory
-- Organizing sales information
-- Providing customers with a convenient online purchasing experience
-
-This system aims to digitize bookstore operations and improve management efficiency.
+- Business Analysis
+- Requirements Analysis
+- System Analysis & Design
+- UML Modeling
+- Database Design
+- Functional Testing
+- Web Application Development
 
 ---
 
 ## 🎯 Project Objectives
 
-- Analyze business requirements
-- Define system scope
-- Identify stakeholders and actors
-- Design business processes
-- Model system behaviors
+The main objectives of this project are:
+
+- Analyze and define business requirements for an online bookstore system
+- Identify stakeholders, actors, and system functionalities
+- Design system workflows and business processes
+- Create software requirement documentation
+- Model system behavior using UML diagrams
 - Design database structure
-- Develop a web-based bookstore system
-- Validate system functionality through testing
+- Develop and validate system functionalities through testing
 
 ---
 
-# 👥 Stakeholders
+## 👥 Stakeholders
+
+The main stakeholders involved in the system include:
 
 - Customer
-- Bookstore Administrator
+- Administrator
 - Store Manager
 
 ---
 
-# 👤 Actors
+## 👤 Actors & Main Functionalities
 
 ### Customer
 
-- Register/Login
-- Browse books
-- Search books
+Customers can:
+
+- Register and login account
+- Search and browse books
 - View book details
-- Add books to cart
+- Add books to shopping cart
 - Place orders
 - View order history
 
 ### Administrator
+
+Administrators can:
 
 - Manage books
 - Manage categories
@@ -70,18 +72,18 @@ This system aims to digitize bookstore operations and improve management efficie
 
 # ✨ Functional Features
 
-## Customer
+## Customer Features
 
-- View book list
-- Search books
-- View book details
+- Book catalog browsing
+- Book searching and filtering
+- Book detail viewing
 - Shopping cart management
-- Checkout
-- Order history
+- Checkout and order placement
+- Order history tracking
 
-## Administrator
+## Administrator Features
 
-- Dashboard
+- Dashboard management
 - Book management
 - Category management
 - Customer management
@@ -89,36 +91,47 @@ This system aims to digitize bookstore operations and improve management efficie
 
 ---
 
-# 🛠 Business Analysis Deliverables
+# 📊 Business Analysis Deliverables
 
-This project includes Business Analysis artifacts such as:
+This repository contains Business Analysis artifacts, including:
 
-- Business Requirement Analysis
-- Stakeholder Identification
-- System Scope Definition
-- Functional Requirements
-- Database Design
-- UML Modeling
-- Test Scenario Design
-
-The following documents are being completed and will be uploaded:
+## Requirement Documentation
 
 - Business Requirements Document (BRD)
 - Software Requirements Specification (SRS)
+- Functional Requirements Specification
+
+## System Design Documentation
+
 - Use Case Diagram
 - Activity Diagram
 - Sequence Diagram
 - Entity Relationship Diagram (ERD)
-- Database Design
-- Functional Specification
-- Wireframes (Figma)
+
+## Testing Documentation
+
 - Test Scenarios
+- Test Cases
+- Bug Reports
+
+## UI/UX Design
+
+- Wireframes
+- System Screenshots
 
 ---
 
-# 🏗 System Modeling
+# 🏗 System Design
 
-The project applies UML modeling techniques including:
+The system was analyzed and designed using:
+
+- Requirement Analysis
+- Business Process Modeling
+- Use Case Modeling
+- UML Modeling
+- Database Modeling
+
+The design artifacts include:
 
 - Use Case Diagram
 - Activity Diagram
@@ -129,93 +142,70 @@ The project applies UML modeling techniques including:
 
 # 💻 Technologies
 
-Backend
+## Backend
 
 - C#
 - ASP.NET MVC
 
-Frontend
+## Frontend
 
 - HTML
 - CSS
 - JavaScript
 - Bootstrap
 
-Database
+## Database
 
 - SQL Server
 
-Tools
+## Tools
 
 - Visual Studio
 - SQL Server Management Studio
 - Draw.io
 - Figma
-- Git
-- GitHub
+- Git & GitHub
 
 ---
 
 # 🧪 Testing
 
-The system is validated through:
+Testing activities include:
 
 - Functional Testing
-- Test Scenarios
+- Test Case Design
 - Requirement Validation
-
----
-
-# 📂 Repository Structure
-
-```
-BookStoreManagementSystem
-│
-├── DoAnLTW/                  Source code
-├── BookDB.sql                Database script
-├── Documents/                BA Documents (Coming Soon)
-│
-├── BRD
-├── SRS
-├── Use Case Diagram
-├── Activity Diagram
-├── Sequence Diagram
-├── ERD
-├── Wireframes
-├── Test Scenarios
-│
-└── README.md
-```
-
----
-
-# 🚧 Current Status
-
-🟢 Ongoing
-
-Completed
-
-- Requirement Analysis
-- Database Design
-- Core System Development
-
-In Progress
-
-- BA Documentation
-- UML Diagrams
-- Test Documentation
+- Bug Reporting
 
 ---
 
 # 📌 Skills Demonstrated
 
 - Requirement Analysis
+- Stakeholder Analysis
 - Business Process Analysis
-- System Analysis
+- Functional Requirement Documentation
+- Software Requirement Specification (SRS)
 - UML Modeling
 - Database Design
-- Functional Specification
-- Software Documentation
+- Test Case Design
+- Functional Testing
 - ASP.NET MVC Development
 - SQL Server
-- Functional Testing
+
+---
+
+# 🚧 Project Status
+
+🟢 Completed
+
+Completed:
+
+- Business Requirement Analysis
+- Stakeholder Identification
+- System Scope Definition
+- Functional Requirement Analysis
+- Database Design
+- System Design
+- Web Application Development
+- Functional Testing Documentation
