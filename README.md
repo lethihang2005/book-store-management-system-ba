@@ -2,18 +2,18 @@
 
 **Business Analysis & System Development Project**
 
-A Business Analyst portfolio project focusing on requirement analysis, system design, UML modeling, database design, testing, and web application development for an online bookstore system.
+A Business Analyst portfolio project focusing on requirements analysis, system design, UML modeling, database design, testing documentation, and web application development for an online bookstore system.
 
 ---
 
 ## 📖 Project Overview
 
-The Online Bookstore Management System is designed to support online bookstore operations, allowing customers to search and purchase books while enabling administrators to manage books, categories, customers, and orders.
+The Online Bookstore Management System is designed to support bookstore operations by providing customers with an online platform to browse, search, and place orders for books. The system also enables administrators to manage books, categories, customers, and orders efficiently.
 
-This project demonstrates skills in:
+This project demonstrates practical experience in:
 
 - Business Analysis
-- Requirement Engineering
+- Requirements Analysis
 - System Analysis & Design
 - UML Modeling
 - Database Design
@@ -22,18 +22,23 @@ This project demonstrates skills in:
 
 ---
 
-## 🎯 Business Objectives
+## 🎯 Project Objectives
 
-The system aims to:
+The main objectives of this project are:
 
-- Improve online book purchasing experience
-- Support efficient book and order management
-- Centralize bookstore information management
-- Reduce manual management processes
+- Analyze and define business requirements for an online bookstore system
+- Identify stakeholders, actors, and system functionalities
+- Design system workflows and business processes
+- Create software requirement documentation
+- Model system behavior using UML diagrams
+- Design database structure
+- Develop and validate system functionalities through testing
 
 ---
 
 ## 👥 Stakeholders
+
+The main stakeholders involved in the system include:
 
 - Customer
 - Administrator
@@ -41,19 +46,22 @@ The system aims to:
 
 ---
 
-## 👤 Actors & Main Use Cases
+## 👤 Actors & Main Functionalities
 
 ### Customer
 
-- Register account
-- Login
-- Search books
+Customers can:
+
+- Register and login account
+- Search and browse books
 - View book details
-- Add books to cart
-- Checkout
+- Add books to shopping cart
+- Place orders
 - View order history
 
 ### Administrator
+
+Administrators can:
 
 - Manage books
 - Manage categories
@@ -62,18 +70,18 @@ The system aims to:
 
 ---
 
-## ✨ Functional Features
+# ✨ Functional Features
 
-### Customer Features
+## Customer Features
 
-- Browse book catalog
-- Search and filter books
-- View book information
+- Book catalog browsing
+- Book searching and filtering
+- Book detail viewing
 - Shopping cart management
-- Order placement
+- Checkout and order placement
 - Order history tracking
 
-### Administrator Features
+## Administrator Features
 
 - Dashboard management
 - Book management
@@ -85,42 +93,50 @@ The system aims to:
 
 # 📊 Business Analysis Deliverables
 
-This repository includes BA artifacts:
+This repository contains Business Analysis artifacts, including:
 
-## Requirement Documents
+## Requirement Documentation
 
 - Business Requirements Document (BRD)
 - Software Requirements Specification (SRS)
-- Functional Requirements
+- Functional Requirements Specification
 
-## System Design
+## System Design Documentation
 
 - Use Case Diagram
 - Activity Diagram
 - Sequence Diagram
 - Entity Relationship Diagram (ERD)
 
-## Testing
+## Testing Documentation
 
 - Test Scenarios
 - Test Cases
 - Bug Reports
 
-## Design
+## UI/UX Design
 
 - Wireframes
 - System Screenshots
 
 ---
 
-# 🏗 System Modeling
+# 🏗 System Design
 
-The system is analyzed and designed using UML:
+The system was analyzed and designed using:
+
+- Requirement Analysis
+- Business Process Modeling
+- Use Case Modeling
+- UML Modeling
+- Database Modeling
+
+The design artifacts include:
 
 - Use Case Diagram
 - Activity Diagram
 - Sequence Diagram
-- ERD
+- Entity Relationship Diagram (ERD)
 
 ---
 
@@ -148,7 +164,7 @@ The system is analyzed and designed using UML:
 - SQL Server Management Studio
 - Draw.io
 - Figma
-- Git/GitHub
+- Git & GitHub
 
 ---
 
@@ -163,4 +179,33 @@ Testing activities include:
 
 ---
 
-# 📂 Repository Structure
+# 📌 Skills Demonstrated
+
+- Requirement Analysis
+- Stakeholder Analysis
+- Business Process Analysis
+- Functional Requirement Documentation
+- Software Requirement Specification (SRS)
+- UML Modeling
+- Database Design
+- Test Case Design
+- Functional Testing
+- ASP.NET MVC Development
+- SQL Server
+
+---
+
+# 🚧 Project Status
+
+🟢 Completed
+
+Completed:
+
+- Business Requirement Analysis
+- Stakeholder Identification
+- System Scope Definition
+- Functional Requirement Analysis
+- Database Design
+- System Design
+- Web Application Development
+- Functional Testing Documentation
