@@ -1,20 +1,20 @@
 # 📚 Online Bookstore Management System
 
 <p align="center">
-  <img src="Design/Trang%20chủ.png" alt="Book Heaven Home Page" width="900">
+  <img src="Design/Screenshots/Trang%20ch%E1%BB%A7.png" alt="Book Heaven Home Page" width="900">
 </p>
 
-A web-based **Online Bookstore Management System** that enables customers to browse, search, and purchase books online while allowing administrators to manage products and customer orders efficiently.
+An **Online Bookstore Management System** that enables customers to browse, search, and purchase books online while allowing administrators to efficiently manage products and customer orders.
 
-This project was developed as part of a **Software Engineering** course and follows the **Software Development Life Cycle (SDLC)**, covering business analysis, system design, implementation, and software testing.
+This project was developed as part of a **Software Engineering** course and follows the **Software Development Life Cycle (SDLC)**, covering business analysis, system design, implementation, database design, software testing, and documentation.
 
 ---
 
 ## 📖 Project Overview
 
-The Online Bookstore Management System is designed to improve the online book purchasing experience by providing an intuitive shopping platform for customers and an administration portal for managing books and orders.
+The Online Bookstore Management System provides an online platform where customers can discover and purchase books conveniently while administrators manage products and customer orders through an administration dashboard.
 
-The project demonstrates the complete SDLC process, from business requirement analysis and system modeling to implementation, testing, and documentation.
+The project demonstrates the complete SDLC process, from business requirement analysis to implementation and software testing.
 
 ---
 
@@ -22,10 +22,10 @@ The project demonstrates the complete SDLC process, from business requirement an
 
 - Analyze business requirements for an online bookstore.
 - Design the system using UML diagrams.
-- Develop a web application with ASP.NET MVC.
+- Develop a web application using ASP.NET MVC.
 - Design and implement a SQL Server database.
 - Perform functional testing using Test Cases and Bug Reports.
-- Produce complete project documentation following SDLC practices.
+- Produce complete software documentation throughout the SDLC.
 
 ---
 
@@ -80,7 +80,7 @@ The project demonstrates the complete SDLC process, from business requirement an
 ## 📂 Repository Structure
 
 ```text
-Online-Bookstore-Management-System
+book-store-management-system-ba
 │
 ├── Case_Study
 │   └── LeThiHang_BA_CaseStudy_BookHeaven.pdf
@@ -89,15 +89,16 @@ Online-Bookstore-Management-System
 │   └── BookDB.sql
 │
 ├── Design
-│   ├── Trang chủ.png
-│   ├── Trang chi tiết sách.png
-│   ├── Trang kết quả tìm kiếm sách.png
-│   ├── Trang giỏ hàng.png
-│   ├── Trang thanh toán.png
-│   ├── Trang đăng nhập.png
-│   ├── Trang đăng ký.png
-│   ├── Trang quản lý đơn hàng của quản trị viên.png
-│   └── Trang quản sản phẩm của quản trị viên.png
+│   └── Screenshots
+│       ├── Trang chủ.png
+│       ├── Trang chi tiết sách.png
+│       ├── Trang giỏ hàng.png
+│       ├── Trang kết quả tìm kiếm sách.png
+│       ├── Trang thanh toán.png
+│       ├── Trang đăng ký.png
+│       ├── Trang đăng nhập.png
+│       ├── Trang quản lý đơn hàng của quản trị viên.png
+│       └── Trang quản sản phẩm của quản trị viên.png
 │
 ├── Documentation
 │   ├── Business Requirements Document (BRD).pdf
@@ -128,44 +129,44 @@ Online-Bookstore-Management-System
 
 ## 📄 Documentation
 
-This repository includes comprehensive project documentation created throughout the Software Development Life Cycle.
+The repository includes the following software engineering artifacts:
 
 | Document | Description |
 |----------|-------------|
-| Business Requirements Document (BRD) | Defines business goals, scope, stakeholders, and business requirements. |
-| Software Requirements Specification (SRS) | Describes the system's functional and non-functional requirements. |
-| Use Case Specification | Provides detailed descriptions of system use cases. |
+| Business Requirements Document (BRD) | Defines business goals, project scope, stakeholders, and business requirements. |
+| Software Requirements Specification (SRS) | Describes functional and non-functional requirements. |
+| Use Case Specification | Detailed use case descriptions and system behavior. |
 | User Stories | Functional requirements written in Agile user story format. |
 
 ---
 
 ## 📐 UML Artifacts
 
-The project includes the following UML diagrams:
+The project includes:
 
 - Use Case Diagram
 - Entity Relationship Diagram (ERD)
 - Activity Diagrams
 - Sequence Diagrams
 
-All UML artifacts are available in the **UML** folder.
+All UML diagrams are available in the **UML** folder.
 
 ---
 
 ## 🧪 Software Testing
 
-Testing deliverables include:
+Testing artifacts include:
 
 - Functional Test Cases
 - Bug Report
 
-These artifacts were created to validate system functionality and ensure software quality.
+These documents were created to validate system functionality and support software quality assurance.
 
 ---
 
 ## 🗄️ Database
 
-The SQL Server database script is located in:
+The SQL Server database script is located at:
 
 ```text
 Database/BookDB.sql
@@ -189,22 +190,22 @@ Execute the script before running the application.
 1. Clone the repository.
 
 ```bash
-git clone https://github.com/lethihang2005/Online-Bookstore-Management-System.git
+git clone https://github.com/lethihang2005/book-store-management-system-ba.git
 ```
 
-2. Restore the database using:
+2. Restore the database.
 
 ```text
 Database/BookDB.sql
 ```
 
-3. Open the solution:
+3. Open the solution.
 
 ```text
 Source/DoAnLTW.sln
 ```
 
-4. Update the SQL Server connection string.
+4. Configure the SQL Server connection string.
 
 5. Build and run the application.
 
@@ -231,7 +232,9 @@ This project demonstrates the complete Software Development Life Cycle (SDLC):
 ## 👥 Team Information
 
 - **Team Size:** 3 members
-- **My Role:** Business Analyst & ASP.NET MVC Developer
+- **My Role:** Business Analyst
+
+> If you also contributed significantly to development, you can update your role to **Business Analyst & ASP.NET MVC Developer**.
 
 ---
 
@@ -242,7 +245,7 @@ This project demonstrates the complete Software Development Life Cycle (SDLC):
 - Wrote the Software Requirements Specification (SRS).
 - Created User Stories and Use Case Specifications.
 - Designed UML diagrams, including Use Case, Activity, Sequence, and ERD.
-- Designed and implemented the SQL Server database.
+- Designed the SQL Server database.
 - Participated in developing the ASP.NET MVC web application.
 - Designed and executed functional Test Cases.
 - Recorded and tracked software defects using Bug Reports.
@@ -257,11 +260,11 @@ Through this project, I gained practical experience in:
 - Business Analysis
 - Requirements Engineering
 - UML Modeling
-- SQL Server Database Design
+- Database Design
 - ASP.NET MVC Development
 - Software Testing
 - SDLC Documentation
-- Version Control with Git & GitHub
+- Version Control using Git & GitHub
 
 ---
 
