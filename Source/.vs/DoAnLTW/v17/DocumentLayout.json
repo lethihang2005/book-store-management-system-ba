@@ -3,56 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|c:\\users\\bangs\\desktop\\github\\book-store-management-system-ba\\source\\doanltw\\controllers\\vouchercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\vouchercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\VoucherController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\VoucherController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\ReviewController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\ReviewController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\SanPhamController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\SanPhamController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\PaymentController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\PaymentController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\ProductController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\ProductController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\favouritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\favouritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\DonHangController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\DonHangController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\donhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\CartController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\CartController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\BangLoaiApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\BangLoaiApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\bangloaiapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\bangloaiapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\controllers\\aboutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\AboutController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\AboutController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\doanltw\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{05E58E1B-F546-4AED-B00C-95B9BE9F8D1B}|DoAnLTW\\DoAnLTW.csproj|solutionrelative:doanltw\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\FavouriteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DoAnLTW\\Controllers\\FavouriteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -72,10 +72,8 @@
               "RelativeDocumentMoniker": "DoAnLTW\\Controllers\\VoucherController.cs",
               "ToolTip": "C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\VoucherController.cs",
               "RelativeToolTip": "DoAnLTW\\Controllers\\VoucherController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-23T14:41:26.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-23T14:41:26.274Z"
             },
             {
               "$type": "Document",
@@ -151,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "DonHangController.cs",
               "DocumentMoniker": "C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\DonHangController.cs",
               "RelativeDocumentMoniker": "DoAnLTW\\Controllers\\DonHangController.cs",
@@ -163,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "DoAnLTW\\Controllers\\CartController.cs",
@@ -175,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "BangLoaiApiController.cs",
               "DocumentMoniker": "C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\BangLoaiApiController.cs",
               "RelativeDocumentMoniker": "DoAnLTW\\Controllers\\BangLoaiApiController.cs",
@@ -187,12 +185,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Model1.edmx [Diagram1]",
+              "DocumentIndex": 10,
+              "Title": "Model1.edmx",
               "DocumentMoniker": "C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Model1.edmx",
               "RelativeDocumentMoniker": "DoAnLTW\\Model1.edmx",
-              "ToolTip": "C:\\Users\\bangs\\Desktop\\Website_ban_sach\\Nhom9_Website_ban_sach\\DoAnLTW\\DoAnLTW\\DoAnLTW\\Model1.edmx [Diagram1]",
-              "RelativeToolTip": "..\\..\\..\\Website_ban_sach\\Nhom9_Website_ban_sach\\DoAnLTW\\DoAnLTW\\DoAnLTW\\Model1.edmx [Diagram1]",
+              "ToolTip": "C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Model1.edmx",
+              "RelativeToolTip": "DoAnLTW\\Model1.edmx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
               "WhenOpened": "2026-07-23T14:37:47.104Z"
             },
@@ -210,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "FavouriteController.cs",
               "DocumentMoniker": "C:\\Users\\bangs\\Desktop\\GitHub\\book-store-management-system-ba\\Source\\DoAnLTW\\Controllers\\FavouriteController.cs",
               "RelativeDocumentMoniker": "DoAnLTW\\Controllers\\FavouriteController.cs",
