@@ -1,0 +1,28 @@
+﻿@model IEnumerable<DoAnLTW.KhuyenMai>
+
+<!-- Vouchers -->
+<div class="container-fluid mx-auto mb-5" style="max-width:1400px">
+    <!-- Tiêu đề -->
+    <h2 class="fw-bold mb-4" style="color:#2c3e50">Khuyến mãi</h2>
+
+    <!-- Các khuyến mãi -->
+    <div class="row g-4">
+        @foreach (var i in Model)
+        {
+            <div class="col-lg-4 col-md-4 col-12 voucher">
+                <div class="card rounded-3 bg-light position-relative overflow-hidden">
+                    <a href="@Url.Action("Index", "Voucher")">
+                        <img src="@Url.Content("~/Content/Images/"+i.HinhAnh)" class="card-img-top" style="height:250px;object-fit:cover" alt="...">
+                    </a>
+                    <div class="image-overlay-text">
+                        <h5 class="card-title fw-bold mb-1">@i.TenKM</h5>
+                        <p class="card-text fw-bold">@i.MoTa</p>
+                    </div>
+
+                    <div class="card-body p-5" style="background-color: #FFFF99">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

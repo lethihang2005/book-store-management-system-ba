@@ -1,0 +1,30 @@
+﻿@model List<DoAnLTW.Sach>
+@{
+    ViewBag.Title = "Sản phẩm";
+}
+
+<div class="container-fluid mt-3" style="max-width:1400px">
+    <div class="row">
+        <!-- Mục lục -->
+        <div class="col-3 d-none d-md-block">
+            @Html.Action("_TimKiem", "Product")
+        </div>
+
+        <!-- Lọc và sản phẩm -->
+        <div class="col-12 col-md-9">
+            <!-- Lọc -->
+            @Html.Action("_Sorts", "Product")
+
+            <!-- Sản phẩm -->
+            @Html.Partial("_Products", Model)
+
+            <!-- Phân trang -->
+            <nav aria-label="Product page navigation" class="d-flex justify-content-center mt-5">
+                <ul class="pagination custom-pagination" id="pagination-controls"></ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Offcanvas Mục lục -->
+    @Html.Action("_Offcanvas", "Product")
+</div>

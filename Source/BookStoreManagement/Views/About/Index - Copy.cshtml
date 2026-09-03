@@ -1,0 +1,124 @@
+﻿@model IEnumerable<DoAnLTW.GioiThieu>
+@{
+    ViewBag.Title = "Giới thiệu";
+}
+<div style="background-color: #FFFBD1">
+    <div class="container-fluid" style="max-width: 1400px">
+        <!-- Tiêu đề -->
+        <div class="row p-4 text-center" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7)">
+            <h1 class="text-uppercase fw-bold display-5" style="color:#7ba3d1">book heaven</h1>
+            <p><i>Mỗi cuốn sách là một thế giới để khám phá.</i></p>
+        </div>
+
+        <!-- Lịch sử hình thành -->
+        <div class="row mt-3 align-items-center">
+            <!-- Cột hình ảnh -->
+            <div class="col-md-6 mb-3">
+                <img src="~/Content/Images/about.png" class="img-fluid rounded-4 shadow mx-auto d-block" />
+            </div>
+
+            <!-- Cột nội dung -->
+            <div class="col-md-6">
+                <h3>⏳ Lịch Sử Hình Thành và Phát Triển</h3>
+                <div class="px-5 py-2" style="text-align:justify">
+                    <p>
+                        Từ một ý tưởng nhỏ nhen nhen nhóm trong niềm đam mê vô tận với "sách và tri thức", Book Heaven đã ra đời vào năm 2025 với mong muốn
+                        mang đến cho người đọc những tác phẩm không chỉ phong phú về thể loại mà còn phải "thật giá trị và dễ dàng tiếp cận".
+                    </p>
+                    <p>
+                        Chúng tôi bắt đầu với một kho tàng sách chọn lọc, tập trung vào những đầu sách kinh điển và các tác phẩm mới nổi bật, được sàng lọc kỹ lưỡng.
+                        Với sự ủng hộ nhiệt tình của cộng đồng độc giả, chúng tôi dần mở rộng danh mục, liên tục cập nhật để "đáp ứng mọi nhu cầu và sở thích đọc" đa dạng của khách hàng.
+                    </p>
+                    <p>
+                        Đến nay, Book Heaven tự hào là "thiên đường sách" quen thuộc của hàng ngàn tín đồ đọc sách, không ngừng nỗ lực để nâng cao chất lượng dịch vụ,
+                        rút ngắn khoảng cách giữa người đọc và tác phẩm, mang đến "trải nghiệm khám phá tri thức tuyệt vời nhất" cho mỗi khách hàng.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Giá trị và Tiêu chuẩn -->
+        <div class="row my-4 g-4">
+            <h3 class="text-center">✨ Giá Trị Cốt Lõi và Tiêu Chuẩn Chất Lượng</h3>
+            @foreach (var i in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0 rounded-4">
+                        <div class="card-body text-center">
+                            <i class="@i.Icon"></i>
+                            <h5 class="card-title">@i.TenGT</h5>
+                            <p class="card-text">@i.MoTa</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Hình ảnh -->
+        <div class="container px-5 py-5" style="max-width:1000px">
+            <div class="row pt-4">
+                <h3 class="text-center pb-4">🖼️ Hình Ảnh Về Chúng Tôi</h3>
+                <div id="autoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                    <!-- Hình ảnh -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active justify-content-center">
+                            <img src="~/Content/Images/hinh1.png" class="d-block w-100 rounded-3 carousel-img-center" />
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+                                <h5>Kho Sách Sắp Xếp Khoa Học</h5>
+                                <p>Dễ dàng tìm kiếm và khám phá những đầu sách phù hợp nhất với sở thích và nhu cầu tri thức của bạn.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item justify-content-center">
+                            <img src="~/Content/Images/hinh2.png" class="d-block w-100 rounded-3 carousel-img-center" />
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+                                <h5>Đội Ngũ Hỗ Trợ Độc Giả</h5>
+                                <p>Luôn sẵn sàng tư vấn, giải đáp thắc mắc và hỗ trợ bạn trong suốt quá trình mua sách.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item justify-content-center">
+                            <img src="~/Content/Images/hinh3.jpg" class="d-block w-100 rounded-3 carousel-img-center" />
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-2">
+                                <h5>Sách Bán Chạy & Đề Xuất</h5>
+                                <p>Những tác phẩm bán chạy nhất, các đầu sách mới nhất và được cộng đồng độc giả yêu thích nhất.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nút chuyển trang về trước -->
+                    <button class="carousel-control-prev" data-bs-target="#basicCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <!-- Nút chuyển trang về trước -->
+                    <button class="carousel-control-next" data-bs-target="#basicCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+
+                    <!-- Nút button tròn -->
+                    <div class="carousel-indicators">
+                        <button data-bs-target="#basicCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button data-bs-target="#basicCarousel" data-bs-slide-to="1"></button>
+                        <button data-bs-target="#basicCarousel" data-bs-slide-to="2"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+    .card {
+        transition: transform 0.3s,box-shadow 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+        }
+
+    .carousel-img-center {
+        height: 450px;
+        object-fit: cover;
+    }
+</style>

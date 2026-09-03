@@ -1,0 +1,78 @@
+﻿@model DoAnLTW.DanhGia
+
+@{
+    ViewBag.Title = "Đánh giá sách";
+}
+
+<div class="container mx-auto rounded-3 my-3 p-4" style="max-width: 800px; box-shadow: 0 0 10px rgba(0,0,0,0.1)">
+    <h3 class="text-center">Đánh giá về sách @ViewBag.TenSach</h3>
+
+    @using (Html.BeginForm("AddReviewOnSubmit", "Review", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.MaSach, new { Value = ViewBag.MaSach })
+
+            <div class="form-group mb-3">
+                <p class="p-1 m-0">Số sao</p>
+                <div class="col-md-12">
+                    <div id="starRating" style="font-size: 30px; cursor: pointer;">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    @Html.HiddenFor(m => m.SoSao, new { id = "SoSao" })
+                    @Html.ValidationMessageFor(m => m.SoSao, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <p class="p-1 m-0">Bình luận</p>
+                <div class="col-md-12">
+                    @Html.TextAreaFor(m => m.BinhLuan, 5, 0, new { @class = "form-control", placeholder = "Nhập đánh giá..." })
+                    @Html.ValidationMessageFor(m => m.BinhLuan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Thêm đánh giá" class="btn btn-custom mt-3" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        <a href="@Url.Action("Detail", "Product", new { id = ViewBag.MaSach })" class="btn btn-secondary p-2">
+            <i class="fa-solid fa-arrow-left"></i>
+            Quay lại
+        </a>
+    </div>
+</div>
+
+<script>
+    const stars = document.querySelectorAll('#starRating i');
+    const ratingInput = document.getElementById('SoSao');
+
+    stars.forEach(star => {
+        star.addEventListener('click', function () {
+            const value = this.getAttribute('data-value');
+            ratingInput.value = value;
+
+            stars.forEach(s => {
+                const starValue = s.getAttribute('data-value');
+            if (starValue <= value) {
+                s.classList.remove('fa-regular');
+                s.classList.add('fa-solid', 'text-warning');
+            } else {
+                s.classList.add('fa-regular');
+                s.classList.remove('fa-solid', 'text-warning');
+            }
+        });
+    });
+    });
+</script>

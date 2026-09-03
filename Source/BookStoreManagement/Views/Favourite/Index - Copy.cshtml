@@ -1,0 +1,79 @@
+﻿@model List<DoAnLTW.YeuThich>
+@using System.Globalization
+@{
+    ViewBag.Title = "Yêu thích";
+}
+
+<!-- Main Layout -->
+<div class="container my-4" style="max-width:1000px">
+    <h2 class="mb-4">
+        <i class="fas fa-heart"></i>
+        Yêu thích
+    </h2>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <div class="row">
+            <div class="col">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <table class="table table-hover align-middle">
+                            <thead>
+                                <tr class="table" style="background-color: #7ba3d1">
+                                    <th scope="col" style="color:#2c3e50; width:43%">Sản phẩm</th>
+                                    <th scope="col" class="text-center" style="color: #2c3e50; width: 12%">Giá (đ)</th>
+                                    <th scope="col" class="text-center" style="color: #2c3e50; width: 20%">Ngày thêm</th>
+                                    <th scope="col" class="text-center" style="color: #2c3e50; width: 15%">Thêm giỏ hàng</th>
+                                    <th scope="col" class="text-center" style="color: #2c3e50; width: 10%">Bỏ thích</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var i in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a href="@Url.Action("Detail", "Product", new { id = i.MaSach })" class="text-decoration-none">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="@Url.Content("~/Content/Images/" + i.Sach.AnhBia)" class="me-3" alt="@i.Sach.TenSach" width="50">
+                                                    <span class="fw-bold" style="color:#2c3e50">@i.Sach.TenSach</span>
+                                                </div>
+                                            </a>
+                                        </td>
+                                        <td class="text-center" style="color:#2c3e50">@i.Sach.GiaBan.Value.ToString("N0", new CultureInfo("en-US")) đ</td>
+                                        <td class="text-center" style="color:#2c3e50">
+                                            <span>@i.NgayThem.Value.ToShortDateString()</span>
+                                        </td>
+                                        <td class="text-center fw-bold" style="color:#2c3e50">
+                                            <a href="@Url.Action("AddToCart", "Cart", new { id = i.MaSach })" class="btn btn-custom"><i class="fas fa-shopping-cart"></i></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="@Url.Action("RemoveFromFavourite", "Favourite", new { id = i.MaSach })" class="btn btn-custom"><i class="fas fa-heart-crack"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <a href="@Url.Action("Index", "Product")" class="btn btn-custom">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                Tiếp tục xem sách
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center" role="alert">
+            <h4 class="alert-heading">Danh sách yêu thích trống! 😥</h4>
+            <p>Bạn chưa có sản phẩm nào trong danh sách yêu thích.</p>
+            <hr>
+            <a href="@Url.Action("Index", "Product")" class="btn btn-custom">
+                <i class="fa-solid fa-arrow-left"></i>
+                Bắt đầu khám phá sách ngay
+            </a>
+        </div>
+    }
+</div>
